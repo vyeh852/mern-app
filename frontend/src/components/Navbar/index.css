@@ -1,0 +1,19 @@
+.nav-hamburger>div{
+width: 20px;
+height: 3px;
+background-color: white;
+margin-top: 4px;
+}
+.nav-list li:hover{
+background-color: violet;
+border-radius: 6px;
+}
+@media (min-width:768px) {
+    .nav-list{
+        display: flex;
+        justify-content: space-around;
+    }
+    .nav-hamburger{
+        display: none;
+    }
+}
