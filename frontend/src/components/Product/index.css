@@ -1,0 +1,23 @@
+.product-container{
+    padding: 10px;
+    max-width: 400px;
+    margin: 10px auto;
+    width: 100%;
+    border: black 1px solid;
+    border-radius: 6px;
+    box-shadow: black;
+}
+.product-btn{
+    width: 100%;
+    background-color: lightgrey;
+    display: block;
+}
+
+@media (min-width:768px) {
+    .product-container{
+        width: 90%;
+    }
+}
+@media (min-width:1024px) {
+  
+}

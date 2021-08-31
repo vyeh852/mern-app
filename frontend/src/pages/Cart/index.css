@@ -1,0 +1,15 @@
+.cart-card{
+    width: 100%;
+    background-color: rgba(250, 250, 250, 0.911);
+}
+.cartItems-container{
+    width: 100%;
+}
+@media (min-width:768px) {
+    .cartItems-container{
+        width: 65%;
+    }
+    .cart-card{
+        width: 30%;
+    }
+}
