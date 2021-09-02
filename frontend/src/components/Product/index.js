@@ -2,7 +2,6 @@ import React from 'react'
 import './index.css'
 import {Link} from 'react-router-dom'
 export default function Product(props) {
-    console.log(props);
     const{name,description,price,imageUrl,productId}=props;
     return (
         <div className="product-container">
