@@ -16,7 +16,10 @@ export default function Home() {
     }, [dispatch]);
     return (
         <div className="home-list flex flex-wrap p-5">
-           {products.map((e)=>{return <Product key={e._id} name={e.name} description={e.description} price={e.price} imageUrl={e.imageUrl} productId={e._id}/>})}
+          {loading?<h2>loading...</h2>:
+          error?<h2>error</h2>:
+          (products.map((e)=>{return <Product key={e._id} name={e.name} description={e.description} price={e.price} imageUrl={e.imageUrl} productId={e._id}/>}))
+          }
         </div>
     )
 }
