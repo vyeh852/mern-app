@@ -8,7 +8,7 @@ export default function Home() {
 
     const getProducts = useSelector((state) => {return state.products});
     const { products, loading, error } = getProducts;
-    console.log(getProducts)
+   
     // console.log(getProducts);
     // console.log(products,loading,error);
     useEffect(() => {

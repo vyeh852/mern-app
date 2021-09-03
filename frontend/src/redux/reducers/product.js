@@ -29,19 +29,16 @@ export const getProductsReducer = (state = { products: [] }, action) => {
 export const getProductDetailsReducer = (state = { product: {} }, action) => {
     switch (action.type) {
         case GET_PRODUCT_DETAILS_REQUEST:
-            console.log("req")
             return {
                 loading: true,
                 product: {},
             };
         case GET_PRODUCT_DETAILS_SUCCESS:
-            console.log("suc")
             return {
                 product: action.payload,
                 loading: false,
             };
         case GET_PRODUCT_DETAILS_FAIL:
-            console.log("fail")
             return {
                 loading: false,
                 error: action.payload,

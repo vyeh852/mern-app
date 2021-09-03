@@ -1,6 +1,8 @@
 import {GET_PRODUCTS_REQUEST,GET_PRODUCTS_SUCCESS,GET_PRODUCTS_FAIL,GET_PRODUCT_DETAILS_REQUEST,GET_PRODUCT_DETAILS_SUCCESS,GET_PRODUCT_DETAILS_FAIL,GET_PRODUCT_DETAILS_RESET} from '../constants';
 
-export const getProducts = () => async (dispatch) => {
+export const getProducts = () => async (dispatch,getState) => {
+  //整包redux中的state
+  console.log(getState());
     try {
       dispatch({ type: GET_PRODUCTS_REQUEST });
   
