@@ -1,18 +1,35 @@
-import './index.css'
 import CartItems from '../../components/CartItems';
+import { useDispatch,useSelector } from 'react-redux';
+import { removeFromCart,addToCart } from '../../redux/actions/cart';
+import './index.css';
 
 export default function Cart() {
+    const dispatch = useDispatch();
+    const cart = useSelector((state) => {return state.cart});
+    const { cartItems } = cart;
+    // console.log(localStorage.getItem('cart'))
+    console.log(cartItems)
+
+    const subtotalItems = cartItems.reduce((pre,cur)=>{return pre+cur.qty*1},0)
+    const totalCash = cartItems.reduce((pre,cur)=>{return pre+(cur.qty*1*cur.price)},0)
+    console.log(totalCash)
+    const qtyChangeHandler = (id, qty) => {
+        dispatch(addToCart(id, qty));
+      };
+    const removeCartHandler = (id)=>{
+        dispatch(removeFromCart(id))
+    }
+
     return (
         <div className="cart-container p-5">
             <p className="cart-title font-bold text-xl">shopping-cart</p>
             <div className="flex flex-wrap">
                 <div className="cartItems-container mt-5">
-                    <CartItems/>
-                    <CartItems/>
+                    {cartItems.map((e)=>{return  <CartItems key={e.product} name={e.name} imageUrl={e.imageUrl} price={e.price} qty={e.qty} product={e.product} removeCartHandler={removeCartHandler} qtyChangeHandler={qtyChangeHandler}/>})}
                 </div>
                 <div className="cart-card p-5">
-                    <p className="cart-title">subtotal items</p>
-                    <p className="cart-price">2,000</p>
+                    <p className="cart-title">subtotal items:  {subtotalItems}</p>
+                    <p className="cart-price">共{totalCash}元</p>
                     <hr/>
                     <div className="cart-btn text-center cursor-pointer">
                         proceed to checkout
