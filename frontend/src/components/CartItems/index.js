@@ -7,7 +7,7 @@ export default function CartItems(props) {
             <img src={imageUrl} alt="product name" className="cartItem-img"/>
             <p className="flex-1 text-center">{name}</p>
             <p className="flex-1 text-center">{price}元</p>
-            <select className="flex-1 text-center" value={qty} onChange={(e)=>{qtyChangeHandler(product,e.target.value)}}>
+            <select className="flex-1 text-center" value={qty} onChange={(e)=>{qtyChangeHandler({id:product,name,price,qty:e.target.value,imageUrl})}}>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>

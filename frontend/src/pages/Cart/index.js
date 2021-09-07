@@ -8,13 +8,13 @@ export default function Cart() {
     const cart = useSelector((state) => {return state.cart});
     const { cartItems } = cart;
     // console.log(localStorage.getItem('cart'))
-    console.log(cartItems)
+    // console.log(cartItems)
 
     const subtotalItems = cartItems.reduce((pre,cur)=>{return pre+cur.qty*1},0)
     const totalCash = cartItems.reduce((pre,cur)=>{return pre+(cur.qty*1*cur.price)},0)
-    console.log(totalCash)
-    const qtyChangeHandler = (id, qty) => {
-        dispatch(addToCart(id, qty));
+    // console.log(totalCash)
+    const qtyChangeHandler = (obj) => {
+        dispatch(addToCart(obj));
       };
     const removeCartHandler = (id)=>{
         dispatch(removeFromCart(id))

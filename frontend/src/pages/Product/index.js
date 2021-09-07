@@ -16,7 +16,7 @@ export default function Product(props) {
     },[]);
 
     const addToCartHandler = ()=>{
-        dispatch(addToCart(_id, qty));
+        dispatch(addToCart({id:_id,name,price,qty,imageUrl}));
         props.history.push(`/cart`);
     }
     return (
