@@ -7,4 +7,6 @@
 }
 .cartItem-delete{
     background-color: rgba(250, 250, 250, 0.911);
+    width: 50%;
+    border-radius: 6px;
 }

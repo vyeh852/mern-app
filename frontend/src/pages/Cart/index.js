@@ -23,15 +23,14 @@ export default function Cart() {
     return (
         <div className="cart-container p-5">
             <p className="cart-title font-bold text-xl">shopping-cart</p>
-            <div className="flex flex-wrap">
+            <div className="flex flex-wrap justify-between">
                 <div className="cartItems-container mt-5">
                     {cartItems.map((e)=>{return  <CartItems key={e.product} name={e.name} imageUrl={e.imageUrl} price={e.price} qty={e.qty} product={e.product} removeCartHandler={removeCartHandler} qtyChangeHandler={qtyChangeHandler}/>})}
                 </div>
                 <div className="cart-card p-5">
                     <p className="cart-title">subtotal items:  {subtotalItems}</p>
                     <p className="cart-price">共{totalCash}元</p>
-                    <hr/>
-                    <div className="cart-btn text-center cursor-pointer">
+                    <div className="cart-btn text-center cursor-pointer my-3">
                         proceed to checkout
                     </div>
                 </div>
