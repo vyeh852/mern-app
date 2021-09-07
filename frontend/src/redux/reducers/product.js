@@ -1,6 +1,7 @@
 import { GET_PRODUCTS_REQUEST, GET_PRODUCTS_SUCCESS, GET_PRODUCTS_FAIL, GET_PRODUCT_DETAILS_REQUEST, GET_PRODUCT_DETAILS_SUCCESS, GET_PRODUCT_DETAILS_FAIL, GET_PRODUCT_DETAILS_RESET } from '../constants';
-// state為redux保存的整包狀態
+// state為redux保存的子狀態
 export const getProductsReducer = (state = { products: [] }, action) => {
+    // console.log(state)
     switch (action.type) {
         case GET_PRODUCTS_REQUEST:
             return {
@@ -8,6 +9,7 @@ export const getProductsReducer = (state = { products: [] }, action) => {
                 products: [],
             };
         case GET_PRODUCTS_SUCCESS:
+            console.log(state)
             return {
                 products: action.payload,
                 loading: false,

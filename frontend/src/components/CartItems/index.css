@@ -1,5 +1,5 @@
 .cartItem-container{
-    border: black 1px solid;
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .cartItem-img{
     max-width: 100px;
@@ -7,4 +7,6 @@
 }
 .cartItem-delete{
     background-color: rgba(250, 250, 250, 0.911);
+    width: 50%;
+    border-radius: 6px;
 }

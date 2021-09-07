@@ -16,11 +16,11 @@ export default function Product(props) {
     },[]);
 
     const addToCartHandler = ()=>{
-        dispatch(addToCart(_id, qty));
+        dispatch(addToCart({id:_id,name,price,qty,imageUrl}));
         props.history.push(`/cart`);
     }
     return (
-        <div className="detail-container p-5 flex flex-wrap md:jsutify-center">
+        <div className="detail-container p-5">
             {loading?<h2>loading...</h2>:
             error?<h2>error</h2>:
             (<>
@@ -30,7 +30,7 @@ export default function Product(props) {
                     <hr/>
                     <p className="detail-price">{price}元</p>
                     <hr/>
-                    <p className="detail-desc">{description}</p>
+                    <p className="detail-desc pt-5">{description}</p>
                 </div>
                 <div className="detail-card p-5">
                     <div className="flex justify-between">
@@ -52,8 +52,8 @@ export default function Product(props) {
                             <option value="4">4</option>
                         </select>
                     </div>
-                    <div className="cursor-pointer bg-black text-white text-center" onClick={addToCartHandler}>
-                        <p>add to cart</p>
+                    <div className="cursor-pointer bg-black text-white text-center mt-5 p-1" onClick={addToCartHandler}>
+                        add to cart
                     </div>
                 </div>
             </>)

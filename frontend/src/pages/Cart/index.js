@@ -8,13 +8,13 @@ export default function Cart() {
     const cart = useSelector((state) => {return state.cart});
     const { cartItems } = cart;
     // console.log(localStorage.getItem('cart'))
-    console.log(cartItems)
+    // console.log(cartItems)
 
     const subtotalItems = cartItems.reduce((pre,cur)=>{return pre+cur.qty*1},0)
     const totalCash = cartItems.reduce((pre,cur)=>{return pre+(cur.qty*1*cur.price)},0)
-    console.log(totalCash)
-    const qtyChangeHandler = (id, qty) => {
-        dispatch(addToCart(id, qty));
+    // console.log(totalCash)
+    const qtyChangeHandler = (obj) => {
+        dispatch(addToCart(obj));
       };
     const removeCartHandler = (id)=>{
         dispatch(removeFromCart(id))
@@ -23,15 +23,14 @@ export default function Cart() {
     return (
         <div className="cart-container p-5">
             <p className="cart-title font-bold text-xl">shopping-cart</p>
-            <div className="flex flex-wrap">
+            <div className="flex flex-wrap justify-between">
                 <div className="cartItems-container mt-5">
                     {cartItems.map((e)=>{return  <CartItems key={e.product} name={e.name} imageUrl={e.imageUrl} price={e.price} qty={e.qty} product={e.product} removeCartHandler={removeCartHandler} qtyChangeHandler={qtyChangeHandler}/>})}
                 </div>
                 <div className="cart-card p-5">
                     <p className="cart-title">subtotal items:  {subtotalItems}</p>
                     <p className="cart-price">共{totalCash}元</p>
-                    <hr/>
-                    <div className="cart-btn text-center cursor-pointer">
+                    <div className="cart-btn text-center cursor-pointer my-3">
                         proceed to checkout
                     </div>
                 </div>
