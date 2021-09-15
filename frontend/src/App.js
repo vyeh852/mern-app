@@ -1,10 +1,11 @@
 import React from "react";
 import {Route,Switch} from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Cart from "./pages/Cart"
-import Home from "./pages/Home"
-import Product from "./pages/Product"
+import Cart from "./pages/Cart";
+import Home from "./pages/Home";
+import Product from "./pages/Product";
 import Sidemenu from "./components/Sidemenu";
+import Login from "./pages/Login";
 
 export default function App() {
   const [menuState,toggleMenuState] = React.useState(false)
@@ -16,6 +17,7 @@ export default function App() {
         <Route exact path="/" component={Home}/>
         <Route path="/cart" component={Cart}/>
         <Route path="/product/:id" component={Product}/>
+        <Route path="/login" component={Login}/>
       </Switch>
     </div>
   );

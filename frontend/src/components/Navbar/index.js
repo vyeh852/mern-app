@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './index.css'
 
 export default function Navbar({toggleMenu}) {
@@ -18,6 +18,11 @@ export default function Navbar({toggleMenu}) {
               <li className="text-white text-xl">
                 <Link to="/">
                     shop
+                </Link>
+              </li>
+              <li className="text-white text-xl">
+                <Link to="/login">
+                    login
                 </Link>
               </li>
           </ul>
