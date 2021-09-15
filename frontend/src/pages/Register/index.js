@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import './index.css';
 
 export default function Register({ history }) {
@@ -8,6 +8,12 @@ export default function Register({ history }) {
     const [password,setpassword] = useState("");
     const [confirmPassword,setConfirmPassword] = useState("");
 
+    // useEffect(()=>{
+    //     if(localStorage.getItem("auth")){
+    //         history.push('/')
+    //     }
+
+    // },[])
     const registerHandler = async() =>{
         if(username && email && password && confirmPassword){
             if(password==confirmPassword){

@@ -1,7 +1,15 @@
 import { Link } from 'react-router-dom'
+import { useState,useEffect } from 'react';
 import './index.css';
 
-export default function Login() {
+export default function Login({ history }) {
+
+    // useEffect(()=>{
+    //     if(localStorage.getItem("auth")){
+    //         history.push('/')
+    //     }
+
+    // },[])
     return (
         <div className="login-container">
             <span className="login-text">email:</span><input type="text"/><br/>
