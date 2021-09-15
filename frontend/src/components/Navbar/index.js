@@ -22,7 +22,7 @@ export default function Navbar({toggleMenu}) {
               </li>
               <li className="text-white text-xl">
                 <Link to="/login">
-                    login
+                    login/signup
                 </Link>
               </li>
           </ul>

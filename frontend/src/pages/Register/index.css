@@ -1,0 +1,25 @@
+.register-container {
+	padding: 10px;
+	width: 300px;
+	box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
+	margin: 50px auto;
+}
+.register-btn {
+	cursor: pointer;
+	padding: 2px;
+	margin-top: 5px;
+	text-align: center;
+	color: white;
+	background-color: black;
+}
+input {
+	width: 100%;
+	border: 2px black solid;
+	border-radius: 5px;
+}
+/* 
+@media (min-width: 768px) {
+	.login-container {
+		width: 500px;
+	}
+} */
